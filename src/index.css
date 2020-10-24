@@ -1,0 +1,57 @@
+html{
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body,
+#root {
+  margin: 0;
+
+}
+body,
+input,
+select,
+textarea{
+  font-size: 1.6rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.grid-container{
+  display: grid;
+  grid-template-areas: 
+  "header"
+  "main" 
+  "footer";
+  grid-template-rows: 5rem 1fr 5rem;
+  grid-template-columns: 1fr;
+  height: 100vh;
+  /* height: 100%; no funciona el %*/
+  /* main-height: calc(100vh - 100px - 300px) por si algo sale mal con la medida vh*/
+}
+a:hover {
+  color: rgb(214, 148, 26);
+}
+header{
+  grid-area: header;
+  background-color: rgb(80, 80, 92);
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+
+}
+header a {
+  color: white;
+  text-decoration: none;
+}
+main{
+  grid-area: main;
+}
+footer{
+  grid-area: footer;
+  background-color: rgb(80, 80, 92);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

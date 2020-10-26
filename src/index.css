@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+
 html{
   font-size: 62.5%;
   box-sizing: border-box;
@@ -11,9 +14,10 @@ body,
 body,
 input,
 select,
+button,
 textarea{
+  font-family: Montserrat,Arial, Helvetica, sans-serif;
   font-size: 1.6rem;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 .grid-container{
@@ -24,9 +28,13 @@ textarea{
   "footer";
   grid-template-rows: 5rem 1fr 5rem;
   grid-template-columns: 1fr;
-  height: 100vh;
+  height: 100%;
+  /* height: 100vh; */
   /* height: 100%; no funciona el %*/
   /* main-height: calc(100vh - 100px - 300px) por si algo sale mal con la medida vh*/
+}
+a{
+  text-decoration: none;
 }
 a:hover {
   color: rgb(214, 148, 26);
@@ -54,4 +62,77 @@ footer{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.content{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.main{
+  flex: 3 60rem;
+}
+.sidebar{
+  flex: 1 20rem;
+}
+
+/* productos */
+
+.productos{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+.productos li{
+  flex: 0 1 29rem;
+  height: 47rem;
+  padding: 1rem;
+}
+.producto{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.producto img{
+  max-width: 37rem;
+  max-height: 37rem;
+
+}
+.producto-precio{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.producto_precio div,
+.producto-precio button{
+  text-align: center;
+  flex: 1;
+  margin-right: 4rem;
+  
+  
+  
+}
+.producto-precio div{
+  font-size: 2rem;
+}
+.button{
+  padding: 1rem;
+  border: 0.1rem #c0c0c0 solid;
+  background-color: #f0f0f0;
+  color: white;
+  cursor: pointer;
+  margin: 1rem;
+}
+.button:hover{
+  border: 0.1rem #808080 solid;
+}
+.button.primary{
+  background-color: rgb(46, 44, 44);
 }

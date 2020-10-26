@@ -1,0 +1,58 @@
+{
+    "productos":[
+        {
+            "_id": "camiseta1",
+            "imagen":"../imagenes/1.jpg",
+            "titulo": "TooHigh Japan",
+            "descripcion": "merch  japan all people",
+            "tallasDisponibles": ["M","L","XL"],
+            "precio": 50000
+
+        },
+        {
+            "_id": "camiseta2",
+            "imagen":"../imagenes/6.jpg",
+            "titulo": "TooHigh Tiger",
+            "descripcion": "merch tiger all people",
+            "tallasDisponibles": ["M","L","XL"],
+            "precio": 45000
+
+        },
+        {
+            "_id": "camiseta3",
+            "imagen":"../imagenes/16.jpg",
+            "titulo": "TooHigh Orange",
+            "descripcion": "merch  orange all people",
+            "tallasDisponibles": ["M","L","XL"],
+            "precio": 47000
+
+        },
+        {
+            "_id": "camiseta4",
+            "imagen":"../imagenes/22.jpg",
+            "titulo": "TooHigh Jaiden smith",
+            "descripcion": "merch  jaiden smith all people",
+            "tallasDisponibles": ["M","L","XL"],
+            "precio": 60000
+
+        },
+        {
+            "_id": "camiseta5",
+            "imagen":"../imagenes/20.jpg",
+            "titulo": "TooHigh  Shen long",
+            "descripcion": "merch Shen long all people",
+            "tallasDisponibles": ["M","L","XL"],
+            "precio": 52000
+
+        },
+        {
+            "_id": "camiseta6",
+            "imagen":"../imagenes/9.jpg",
+            "titulo": "TooHigh Money Moves",
+            "descripcion": "merch Money Moves all people",
+            "tallasDisponibles": ["M","L","XL"],
+            "precio": 55000
+
+        }
+    ]
+}

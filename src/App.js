@@ -1,21 +1,37 @@
-// caracteristicas 1
+// componetes-productos 1
 import React from 'react';
+import data from "./data.json";
+import Products from "./components/Products"
 
-function App() {
-  return (
+
+class App extends React.Component {
+  constructor(){
+    super();
+    this.state = {
+      products: data.produts,
+      talla:"",
+      clasificar:"",
+    };
+  }
+  render(){
+    return (
     <div className="grid-container">
       <header>
         <a href="/">TooHigh shop </a>
       </header>
 
       <main>
-        lista de productos
+        <div className="content">
+          <div className="main">products<products products={this.state.products}></products></div>
+          <div className="sidebar">cart items</div>
+        </div>
       </main>
       <footer>
         todos los derechos reservados
       </footer>
     </div>
   );
+  }
 }
 
 export default App;

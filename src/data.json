@@ -2,8 +2,57 @@
     "produtos":[
         {
             "_id": "camiseta1",
-            "titulo": "camiseta 1",
-            "imagen":"../imagenes/1.jpg"
+            "imagen":"../imagenes/1.jpg",
+            "titulo": "TooHigh Japan",
+            "descripcion": "merch  japan all people",
+            "tallasDisponibles": ["M","L","XL"],
+            "precio": 50000
+
+        },
+        {
+            "_id": "camiseta2",
+            "imagen":"../imagenes/6.jpg",
+            "titulo": "TooHigh tiger",
+            "descripcion": "merch tiger all people",
+            "tallasDisponibles": ["M","L","XL"],
+            "precio": 50000
+
+        },
+        {
+            "_id": "camiseta3",
+            "imagen":"../imagenes/16.jpg",
+            "titulo": "TooHigh orange",
+            "descripcion": "merch  orange all people",
+            "tallasDisponibles": ["M","L","XL"],
+            "precio": 50000
+
+        },
+        {
+            "_id": "camiseta4",
+            "imagen":"../imagenes/22.jpg",
+            "titulo": "TooHigh Jaiden smith",
+            "descripcion": "merch  jaiden smith all people",
+            "tallasDisponibles": ["M","L","XL"],
+            "precio": 50000
+
+        },
+        {
+            "_id": "camiseta5",
+            "imagen":"../imagenes/20.jpg",
+            "titulo": "TooHigh  shen long",
+            "descripcion": "merch shen long all people",
+            "tallasDisponibles": ["M","L","XL"],
+            "precio": 50000
+
+        },
+        {
+            "_id": "camiseta6",
+            "imagen":"../imagenes/9.jpg",
+            "titulo": "TooHigh pato Donald",
+            "descripcion": "merch Donald all people",
+            "tallasDisponibles": ["M","L","XL"],
+            "precio": 50000
+
         }
     ]
 }

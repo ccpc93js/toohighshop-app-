@@ -1,14 +1,14 @@
 // componetes-productos 1
 import React from 'react';
+import Productos from './components/Productos';
 import data from "./data.json";
-import Products from "./components/Products"
 
 
 class App extends React.Component {
   constructor(){
     super();
     this.state = {
-      products: data.produts,
+      productos:  data.productos,
       talla:"",
       clasificar:"",
     };
@@ -22,7 +22,7 @@ class App extends React.Component {
 
       <main>
         <div className="content">
-          <div className="main">products<products products={this.state.products}></products></div>
+          <div className="main"><Productos productos={this.state.productos}></Productos></div>
           <div className="sidebar">cart items</div>
         </div>
       </main>

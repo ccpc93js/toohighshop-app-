@@ -1,0 +1,9 @@
+{
+    "produtos":[
+        {
+            "_id": "camiseta1",
+            "titulo": "camiseta 1",
+            "imagen":"../imagenes/1.jpg"
+        }
+    ]
+}

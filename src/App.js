@@ -1,5 +1,6 @@
 // componetes-productos 1
 import React from 'react';
+import Cart from './components/Cart';
 import Filtrador from './components/Filtrador';
 import Productos from './components/Productos';
 import data from "./data.json";
@@ -10,10 +11,31 @@ class App extends React.Component {
     super();
     this.state = {
       productos:  data.productos,
+      cartItems: [],
       talla:"",
       clasificacion:"",
     };
   }
+  removerDeCarrito=(producto)=>{
+    const cartItems = this.state.cartItems.slice();
+    this.setState({
+      cartItems: cartItems.filter((x) =>x._id !== producto._id)
+    })
+  }
+  agregarACarrito = (producto)=> {
+    const cartItems = this.state.cartItems.slice();
+    let alreadyInCart= false;
+    cartItems.forEach((item)=>{
+      if(item._id === producto._id){
+        item.count++;
+        alreadyInCart = true;
+      }
+    });
+    if(!alreadyInCart){
+      cartItems.push({...producto, count: 1});
+    }
+    this.setState({cartItems})
+  };
   clasificacionProductos=(event)=>{
     //implementar
     const clasificacion = event.target.value;
@@ -60,8 +82,11 @@ class App extends React.Component {
             clasificacionProductos={this.clasificacionProductos}
             ></Filtrador>
 
-            <Productos productos={this.state.productos}></Productos></div>
-          <div className="sidebar">cart items</div>
+            <Productos 
+              productos={this.state.productos}
+              agregarACarrito={this.agregarACarrito}
+            ></Productos></div>
+          <div className="sidebar"><Cart cartItems={this.state.cartItems} removerDeCarrito={this.removerDeCarrito}/></div>
         </div>
       </main>
       <footer>

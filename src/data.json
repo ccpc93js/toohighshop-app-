@@ -5,7 +5,7 @@
             "imagen":"../imagenes/1.jpg",
             "titulo": "TooHigh Japan",
             "descripcion": "merch  japan all people",
-            "tallasDisponibles": ["M","L","XL"],
+            "tallasDisponibles": ["M","L","XL","XXL"],
             "precio": 50000
 
         },
@@ -23,7 +23,7 @@
             "imagen":"../imagenes/16.jpg",
             "titulo": "TooHigh Orange",
             "descripcion": "merch  orange all people",
-            "tallasDisponibles": ["M","L","XL"],
+            "tallasDisponibles": ["M","L"],
             "precio": 47000
 
         },
@@ -32,7 +32,7 @@
             "imagen":"../imagenes/22.jpg",
             "titulo": "TooHigh Jaiden smith",
             "descripcion": "merch  jaiden smith all people",
-            "tallasDisponibles": ["M","L","XL"],
+            "tallasDisponibles": ["M","L","XL","XXL"],
             "precio": 60000
 
         },
@@ -50,7 +50,7 @@
             "imagen":"../imagenes/9.jpg",
             "titulo": "TooHigh Money Moves",
             "descripcion": "merch Money Moves all people",
-            "tallasDisponibles": ["M","L","XL"],
+            "tallasDisponibles": ["M","L"],
             "precio": 55000
 
         }

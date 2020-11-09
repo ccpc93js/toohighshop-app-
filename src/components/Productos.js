@@ -11,15 +11,18 @@ export default class Productos extends Component {
                             <div className="producto">
                                 <a href={"#" + producto._id}>
                                     <img src={producto.imagen} alt={producto.titulo}></img>
-                                    <p>
-                                        {producto.titulo}
-                                    </p>
-                                </a>
-                                <div className="producto-precio">
-                                    <div>{formatCurrency(producto.precio)} </div>
+                                    <div className="producto-precio">
                                     <button
-                                    onClick={()=> this.props.agregarACarrito(producto)} className="button primary">Agregar a carrito</button>
-                                </div>
+                                    onClick={()=> this.props.agregarACarrito(producto)} 
+                                    className="button primary">Agregar a carrito</button>
+                                    </div>
+                                    <div className="precio-titulo">
+                                    {formatCurrency(producto.precio)} 
+                                    <p>{producto.titulo}</p>
+                                    </div>
+                                    
+                                </a>
+                                
                             </div>
                         </li>
                     ))}

@@ -11,16 +11,21 @@ class App extends React.Component {
     super();
     this.state = {
       productos:  data.productos,
-      cartItems: [],
+      cartItems: localStorage.getItem("cartItems")? JSON.parse(localStorage.getItem("cartItems")):[],
       talla:"",
       clasificacion:"",
     };
+  }
+  createOrder=(order)=>{
+    alert("necesito guardar la orden para " + order.nombre)
   }
   removerDeCarrito=(producto)=>{
     const cartItems = this.state.cartItems.slice();
     this.setState({
       cartItems: cartItems.filter((x) =>x._id !== producto._id)
-    })
+    });
+    localStorage.setItem("cartItems", JSON.stringify(cartItems.filter((x) =>x._id !== producto._id)));
+
   }
   agregarACarrito = (producto)=> {
     const cartItems = this.state.cartItems.slice();
@@ -35,6 +40,7 @@ class App extends React.Component {
       cartItems.push({...producto, count: 1});
     }
     this.setState({cartItems})
+    localStorage.setItem("cartItems", JSON.stringify(cartItems))
   };
   clasificacionProductos=(event)=>{
     //implementar
@@ -69,7 +75,7 @@ class App extends React.Component {
     return (
     <div className="grid-container">
       <header>
-        <a href="/">TooHigh shop </a>
+        <a className="logo-principal" href="/">TooHigh shop </a>
       </header>
 
       <main>
@@ -86,7 +92,13 @@ class App extends React.Component {
               productos={this.state.productos}
               agregarACarrito={this.agregarACarrito}
             ></Productos></div>
-          <div className="sidebar"><Cart cartItems={this.state.cartItems} removerDeCarrito={this.removerDeCarrito}/></div>
+          <div className="sidebar">
+          <Cart 
+          cartItems={this.state.cartItems} 
+          removerDeCarrito={this.removerDeCarrito}
+          createOrder={this.createOrder}
+          />
+          </div>
         </div>
       </main>
       <footer>

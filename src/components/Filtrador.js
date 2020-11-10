@@ -9,12 +9,14 @@ export default class Filtrador extends Component {
                 <div className="filtrador-resultado">{this.props.count} Productos</div>
                 <div className="filtrador-clasificacion">
                     Ordenar por precio{"    "}
-                    <i className="fas fa-chevron-circle-down"></i>
                     <select className="select" value={this.props.talla} onChange={this.props.clasificacionProductos}>
-                        <option>Ultimo</option>
+                    
+                    
+                    <option>Ultimo </option>
                         <option value="menor">Menor</option>
                         <option value="mayor">Mayor</option>
                     </select>
+                    <i className="fas fa-chevron-circle-down"></i>
                 </div>
                 <div className="filtrador-talla">
                     Filtro{"    "}
@@ -27,6 +29,7 @@ export default class Filtrador extends Component {
                         <option value="XL">XL</option>
                         <option value="XXL">XXL</option>
                     </select>
+                    <i className="fas fa-chevron-circle-down"></i>
                 </div>
             </div>
         )

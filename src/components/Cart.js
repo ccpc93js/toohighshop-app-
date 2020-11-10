@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import formatCurrency from '../util';
+import Fade from 'react-reveal/Fade';
 
 export default class Cart extends Component {
     constructor(props){
@@ -30,13 +31,14 @@ export default class Cart extends Component {
         const {cartItems}=this.props;
         return (
             <div>
-                {cartItems.length === 0?(<div className="cart cart-header">Carrito vacio</div>
+                {cartItems.length === 0?(<div className="cart cart-header">Carrito vacio   <i className="fas fa-shopping-cart"></i></div>
                 ):(
-                <div className="cart cart-header">Tienes {cartItems.length} en el carrito{""}
+                <div className="cart cart-header">Tienes {cartItems.length}   en el carrito{""} <i class="fas fa-shopping-cart"></i>
                 </div>
                 )}
                 <div>
                  <div className="cart">
+                 <Fade left cascade>
                     <ul className="cart-items">
                         {cartItems.map(item =>(
                             <li key={item._id}>
@@ -55,6 +57,7 @@ export default class Cart extends Component {
                             </li>
                         ))}
                     </ul>
+                    </Fade>
                  </div> 
                  {cartItems.length !== 0 &&(
                      <div>
@@ -70,6 +73,7 @@ export default class Cart extends Component {
                     }} className="button primary">Continuar</button>
                  </div>
                  {this.state.showCheckout && (
+                     <Fade right cascade>
                      <div className="cart">
                         <form onSubmit={this.createOrder}>
                             <ul className="form-container">
@@ -103,11 +107,12 @@ export default class Cart extends Component {
                             </input>
                         </li>
                         <li>
-                            <button className="button primary btn-person" type="submit">Listo</button>
+                            <button className="button primary btn-person checkout" type="submit"><i className="fas fa-shopping-bag"></i>  Checkout</button>
                         </li>
                             </ul>
                         </form>
                      </div>
+                     </Fade>
                  )}
                  </div>
                  )}    

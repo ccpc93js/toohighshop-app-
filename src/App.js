@@ -4,7 +4,8 @@ import Cart from './components/Cart';
 import Filtrador from './components/Filtrador';
 import Productos from './components/Productos';
 import data from "./data.json";
-
+import store from './store';
+import {Provider} from 'react-redux'
 
 class App extends React.Component {
   constructor(){
@@ -73,6 +74,7 @@ class App extends React.Component {
   };
   render(){
     return (
+    <Provider   store={store}>
     <div className="grid-container">
       <header>
         <a className="logo-principal" href="/">TooHigh shop </a>
@@ -105,6 +107,7 @@ class App extends React.Component {
         todos los derechos reservados
       </footer>
     </div>
+    </Provider> 
   );
   }
 }

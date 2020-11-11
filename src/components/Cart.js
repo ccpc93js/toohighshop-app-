@@ -33,7 +33,7 @@ export default class Cart extends Component {
             <div>
                 {cartItems.length === 0?(<div className="cart cart-header">Carrito vacio   <i className="fas fa-shopping-cart"></i></div>
                 ):(
-                <div className="cart cart-header">Tienes {cartItems.length}   en el carrito{""} <i class="fas fa-shopping-cart"></i>
+                <div className="cart cart-header">Tienes {cartItems.length}   en el carrito{""} <i className="fas fa-shopping-cart"></i>
                 </div>
                 )}
                 <div>

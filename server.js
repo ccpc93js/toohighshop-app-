@@ -22,24 +22,24 @@ new mongoose.Schema({
     precio: Number
 }))
 
-app.get("/api", async(req, res)=>{
+app.get("/apiProductos", async(req, res)=>{
     const productos = await Producto.find({});
     res.send(productos);
-    console.log(res)
+    // console.log(res)
     
 })
 
-app.post("/api",async(req, res)=>{
+app.post("/apiProductos",async(req, res)=>{
     const nuevoProducto = new Producto(req.body);
     const guardarProducto = await nuevoProducto.save();
     res.send(guardarProducto);
-    console.log(req)
+    // console.log(req)
 })
 
-app.delete("/api/:id",async(req, res)=>{
+app.delete("/apiProductos/:id",async(req, res)=>{
     const eliminarProducto = await Producto.findByIdAndDelete(req.params.id);
     res.send(eliminarProducto);
-    console.log(req,res)
+    // console.log(req,res)
 })
 
 const port = process.env.PORT || 5000;

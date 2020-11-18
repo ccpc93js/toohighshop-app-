@@ -1,9 +1,10 @@
+//los codigos que estan comentados se comentaron por que al usar el redux y manejar los datos desde la store ya no son necesarios tenerlos aqui
 // componetes-productos 1
 import React from 'react';
 import Cart from './components/Cart';
 import Filtrador from './components/Filtrador';
 import Productos from './components/Productos';
-import data from "./data.json";
+// import data from "./data.json"; 
 import store from './store';
 import {Provider} from 'react-redux'
 
@@ -11,10 +12,10 @@ class App extends React.Component {
   constructor(){
     super();
     this.state = {
-      productos:  data.productos,
+      // productos:  data.productos,
       cartItems: localStorage.getItem("cartItems")? JSON.parse(localStorage.getItem("cartItems")):[],
-      talla:"",
-      clasificacion:"",
+      // talla:"",
+      // clasificacion:"",
     };
   }
   createOrder=(order)=>{
@@ -43,35 +44,37 @@ class App extends React.Component {
     this.setState({cartItems})
     localStorage.setItem("cartItems", JSON.stringify(cartItems))
   };
-  clasificacionProductos=(event)=>{
-    //implementar
-    const clasificacion = event.target.value;
-    console.log(event.target.value);
-    this.setState((state)=>({
-      clasificacion: clasificacion,
-      productos : this.state.productos.slice().sort ((a,b)=>
-         clasificacion ==="menor"?
-         ((a.precio > b.precio)? 1:-1):
-         clasificacion === "mayor"?
-         ((a.precio < b.precio)?1:-1):
-         ((a._id < b._id)? 1:-1)
-       )
-    }))
-  }
-  filtradorProductos=(event)=>{
-    //implementar
-    console.log(event.target.value);
-    if(event.target.value ===""){
-      this.setState({talla: event.target.value, productos: data.productos})
-    }else{
-      this.setState({
-        talla: event.target.value,
-        productos: data.productos.filter(
-          (producto) => producto.tallasDisponibles.indexOf(event.target.value) >=0 )
-      });
-    }
+  // clasificacionProductos=(event)=>{
+  //   //implementar
+  //   const clasificacion = event.target.value;
+  //   console.log(event.target.value);
+  //   this.setState((state)=>({
+  //     clasificacion: clasificacion,
+  //     productos : this.state.productos.slice().sort((a,b)=>
+  //        clasificacion ==="menor"?
+  //        ((a.precio > b.precio)? 1:-1):
+  //        clasificacion === "mayor"?
+  //        ((a.precio < b.precio)?1:-1):
+  //        ((a._id < b._id)? 1:-1)
+  //      )
+  //   }))
+  // }
+  // filtradorProductos=(event)=>{
+  //   //implementar
+  //   console.log(event.target.value);
+  //   if(event.target.value ===""){
+  //     this.setState({talla: event.target.value, productos: data.productos})
+  //   }else{
+  //     this.setState({
+  //       talla: event.target.value,
+  //       productos: data.productos.filter(
+  //         (producto) => producto.tallasDisponibles.indexOf(event.target.value) >=0 )
+  //     });
+  //   }
     
-  };
+  // };
+// ni clasificacionProductos ni filtradorProductos SE NECEITAN PARA AGREGAR REDUX, ESTOS SE OBVIARAN
+
   render(){
     return (
     <Provider   store={store}>
@@ -83,17 +86,20 @@ class App extends React.Component {
       <main>
         <div className="content">
           <div className="main">
-            <Filtrador count={this.state.productos.length}
-            talla={this.state.talla}
-            clasificacion={this.state.clasificacion}
-            filtradorProductos={this.filtradorProductos}
-            clasificacionProductos={this.clasificacionProductos}
+            <Filtrador
+            //  count={this.state.productos.length}
+            // talla={this.state.talla}
+            // clasificacion={this.state.clasificacion}
+            // filtradorProductos={this.filtradorProductos}
+            // clasificacionProductos={this.clasificacionProductos}
             ></Filtrador>
 
             <Productos 
-              productos={this.state.productos}
+              // productos={this.state.productos}
               agregarACarrito={this.agregarACarrito}
-            ></Productos></div>
+            ></Productos>
+
+            </div>
           <div className="sidebar">
           <Cart 
           cartItems={this.state.cartItems} 

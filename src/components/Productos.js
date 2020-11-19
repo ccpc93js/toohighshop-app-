@@ -5,6 +5,7 @@ import Modal from "react-modal";
 import Zoom from "react-reveal/Zoom"
 import { connect } from 'react-redux';
 import {fetchProductos} from '../action/productActions'
+import {agregarACarrito} from "../action/cartActions"
 class Productos extends Component {
     constructor(props){
         super(props);
@@ -36,17 +37,18 @@ class Productos extends Component {
                             <div className="producto">
                                 <a href={"#" + producto._id} onClick={()=>this.openModal(producto)}>
                                     <img src={producto.imagen} alt={producto.titulo}></img>
-                                    <div className="producto-precio">
-                                    <button
-                                    onClick={()=> this.props.agregarACarrito(producto)} 
-                                    className="button primary"><i class="fas fa-shopping-basket"></i>     Agregar a carrito</button>
-                                    </div>
-                                    <div className="precio-titulo">
-                                    {formatCurrency(producto.precio)} 
-                                    <p>{producto.titulo}</p>
-                                    </div>
+                                   
                                     
                                 </a>
+                                <div className="producto-precio">
+                                <button
+                                onClick={()=> this.props.agregarACarrito(producto)} 
+                                className="button primary"><i class="fas fa-shopping-basket"></i>     Agregar a carrito</button>
+                                </div>
+                                <div className="precio-titulo">
+                                {formatCurrency(producto.precio)} 
+                                <p>{producto.titulo}</p>
+                                </div>
                                 
                             </div>
                         </li>
@@ -103,4 +105,6 @@ class Productos extends Component {
 
 export default connect(
     (state)=>({productos: state.productos.filteredItems}),
-    {fetchProductos})(Productos)
+    {fetchProductos,
+    agregarACarrito
+})(Productos);

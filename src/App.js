@@ -9,41 +9,41 @@ import store from './store';
 import {Provider} from 'react-redux'
 
 class App extends React.Component {
-  constructor(){
-    super();
-    this.state = {
-      // productos:  data.productos,
-      cartItems: localStorage.getItem("cartItems")? JSON.parse(localStorage.getItem("cartItems")):[],
-      // talla:"",
-      // clasificacion:"",
-    };
-  }
-  createOrder=(order)=>{
-    alert("necesito guardar la orden para " + order.nombre)
-  }
-  removerDeCarrito=(producto)=>{
-    const cartItems = this.state.cartItems.slice();
-    this.setState({
-      cartItems: cartItems.filter((x) =>x._id !== producto._id)
-    });
-    localStorage.setItem("cartItems", JSON.stringify(cartItems.filter((x) =>x._id !== producto._id)));
+  // constructor(){
+  //   super();
+  //   this.state = {
+  //     // productos:  data.productos,
+  //     cartItems: localStorage.getItem("cartItems")? JSON.parse(localStorage.getItem("cartItems")):[],
+  //     // talla:"",
+  //     // clasificacion:"",
+  //   };
+  // }
+  // createOrder=(order)=>{
+  //   alert("necesito guardar la orden para " + order.nombre)
+  // }
+  // removerDeCarrito=(producto)=>{
+  //   const cartItems = this.state.cartItems.slice();
+  //   this.setState({
+  //     cartItems: cartItems.filter((x) =>x._id !== producto._id)
+  //   });
+  //   localStorage.setItem("cartItems", JSON.stringify(cartItems.filter((x) =>x._id !== producto._id)));
 
-  }
-  agregarACarrito = (producto)=> {
-    const cartItems = this.state.cartItems.slice();
-    let alreadyInCart= false;
-    cartItems.forEach((item)=>{
-      if(item._id === producto._id){
-        item.count++;
-        alreadyInCart = true;
-      }
-    });
-    if(!alreadyInCart){
-      cartItems.push({...producto, count: 1});
-    }
-    this.setState({cartItems})
-    localStorage.setItem("cartItems", JSON.stringify(cartItems))
-  };
+  // }
+  // agregarACarrito = (producto)=> {
+  //   const cartItems = this.state.cartItems.slice();
+  //   let alreadyInCart= false;
+  //   cartItems.forEach((item)=>{
+  //     if(item._id === producto._id){
+  //       item.count++;
+  //       alreadyInCart = true;
+  //     }
+  //   });
+  //   if(!alreadyInCart){
+  //     cartItems.push({...producto, count: 1});
+  //   }
+  //   this.setState({cartItems})
+  //   localStorage.setItem("cartItems", JSON.stringify(cartItems))
+  // };
   // clasificacionProductos=(event)=>{
   //   //implementar
   //   const clasificacion = event.target.value;
@@ -73,7 +73,7 @@ class App extends React.Component {
   //   }
     
   // };
-// ni clasificacionProductos ni filtradorProductos SE NECEITAN PARA AGREGAR REDUX, ESTOS SE OBVIARAN
+// ni clasificacionProductos ni filtradorProductos SE NECEITAN despues de  AGREGAR REDUX, ESTOS SE OBVIARAN
 
   render(){
     return (
@@ -96,15 +96,15 @@ class App extends React.Component {
 
             <Productos 
               // productos={this.state.productos}
-              agregarACarrito={this.agregarACarrito}
+              // agregarACarrito={this.agregarACarrito}
             ></Productos>
 
             </div>
           <div className="sidebar">
           <Cart 
-          cartItems={this.state.cartItems} 
-          removerDeCarrito={this.removerDeCarrito}
-          createOrder={this.createOrder}
+          // cartItems={this.state.cartItems} 
+          // removerDeCarrito={this.removerDeCarrito}
+          // createOrder={this.createOrder}
           />
           </div>
         </div>

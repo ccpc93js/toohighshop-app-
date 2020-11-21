@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import formatCurrency from '../util';
 import Fade from 'react-reveal/Fade';
+import Modal from "react-modal";
+import Zoom from "react-reveal/Zoom"
 import { connect } from 'react-redux';
 import { removerDeCarrito } from '../action/cartActions';
-
+import {createOrder, clearOrder} from "../action/orderActions"
  class Cart extends Component {
     constructor(props){
         super(props);
@@ -24,13 +26,18 @@ import { removerDeCarrito } from '../action/cartActions';
             email: this.state.email,
             nombre: this.state.nombre,
             direccion: this.state.direccion,
-            cartItems: this.props.cartItems
+            cartItems: this.props.cartItems,
+            total: this.props.cartItems.reduce((a, c) => a + c.precio * c.count, 0)
         }
         this.props.createOrder(order);
     }
 
+    closeModal = () => {
+        this.props.clearOrder();
+    };
+
     render() {
-        const {cartItems}=this.props;
+        const {cartItems, order}=this.props;
         return (
             <div>
                 {cartItems.length === 0?(<div className="cart cart-header">Carrito vacio   <i className="fas fa-shopping-cart"></i></div>
@@ -38,6 +45,52 @@ import { removerDeCarrito } from '../action/cartActions';
                 <div className="cart cart-header">Tienes {cartItems.length}   en el carrito{""} <i className="fas fa-shopping-cart"></i>
                 </div>
                 )}
+
+                {order && 
+                    <Modal
+                    isOpen={true} onRequestClose={this.closeModal}>
+
+                        <Zoom>
+                        <buttom className="close-modal" onClick={this.closeModal}><i class="far fa-times-circle"></i></buttom>
+                        <div className="order-details">
+                <h3 className="mensaje-Exitoso">su orden ha sido puesta.</h3>
+                <h2>Orden: {order._id}</h2>
+                <ul>
+                  <li>
+                    <div>Nombre:</div>
+                    <div>{order.nombre}</div>
+                  </li>
+                  <li>
+                    <div>Email:</div>
+                    <div>{order.email}</div>
+                  </li>
+                  <li>
+                    <div>direccion:</div>
+                    <div>{order.direccion}</div>
+                  </li>
+                  <li>
+                    <div>Fecha:</div>
+                    <div>{order.createdAt}</div>
+                  </li>
+                  <li>
+                    <div>Total:</div>
+                    <div>{formatCurrency(order.total)}</div>
+                  </li>
+                  <li>
+                    <div>Carrito:</div>
+                    <div>
+                      {order.cartItems.map((x) => (
+                        <div>
+                          {x.count} {" x "} {x.titulo}
+                        </div>
+                      ))}
+                    </div>
+                  </li>
+                </ul>
+              </div>
+                        </Zoom>
+                    </Modal>
+                }
                 <div>
                  <div className="cart">
                  <Fade left cascade>
@@ -127,7 +180,8 @@ import { removerDeCarrito } from '../action/cartActions';
 
 export default connect(
     (state)=>({
+        order:state.order.order,
         cartItems: state.cart.cartItems,
     }),
-    {removerDeCarrito}
+    {removerDeCarrito, createOrder, clearOrder}
     )(Cart);

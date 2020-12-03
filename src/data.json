@@ -1,4 +1,8 @@
-{
+{   
+
+    "logo":[
+        {"imagen":"../imagenes/10small.jpg"}
+    ],
     "productos":[
         {
             "_id": "camiseta1",
@@ -54,5 +58,11 @@
             "precio": 55000
 
         }
+    ],
+    "colecciones":[
+        {
+            "imagen":"../imagenes/12.jpg"
+        }
     ]
+
 }

@@ -3,6 +3,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Cardo&display=swap");
 /* @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap"); */
 @import uRL("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+@font-face{font-family: paladins; src:url(paladins.ttf);}
+@font-face{font-family: paladins3D; src:url(paladins3d.ttf);}
+
 /* tipos de tipografia a utilicar
 helvetica light italic
 helvetica extra black
@@ -88,20 +91,27 @@ header{
   background-color: black;
   color: white;
   display: flex;
-  align-items: center;
   padding: 0.5rem;
+  
 
 }
 header a {
   color: white;
   text-decoration: none;
+  align-items: center;
 }
 .logo-principal{
-  font-family: 'Staatliches', cursive;
-  font-size: 3rem;
+  /* font-family: 'Staatliches', cursive; */
+  /* font-size: 3rem; */
+  border: white;
+}
+.logo-principal>img{
+  width: 10rem;
+  margin-top: 1.2rem;
 }
 main{
   grid-area: main;
+  margin-top: 2rem;
 }
 footer{
   grid-area: footer;
@@ -110,6 +120,8 @@ footer{
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 2rem;
+  
 }
 
 .content{
@@ -395,4 +407,43 @@ i{
 
 .mensaje-Exitoso{
   color: rgb(28, 172, 28);
+}
+
+
+/* Home */
+
+.coleccion-img{
+  width: 10rem;
+  align-content: center;
+  align-items: center;
+
+}
+
+.coleccion-img div  {
+  width:  8rem;
+  padding: 5rem 5rem 5rem 15rem;
+  align-items: center;
+
+
+}
+
+.coleccion-img a {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+/*Navbar*/
+.Navbar{
+  background-color: black;
+  margin-bottom: 5rem;
+}
+.logo-principal{
+  font-family: paladins;
+  /* font-family: paladins3D; */
+  font-size: 2.5rem;
+  color: white;
+}
+
+.listas{
+  font-size: 3rem;
 }

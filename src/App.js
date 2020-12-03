@@ -1,12 +1,16 @@
 //los codigos que estan comentados se comentaron por que al usar el redux y manejar los datos desde la store ya no son necesarios tenerlos aqui
 // componetes-productos 1
 import React from 'react';
-import Cart from './components/Cart';
-import Filtrador from './components/Filtrador';
-import Productos from './components/Productos';
-// import data from "./data.json"; 
 import store from './store';
 import {Provider} from 'react-redux'
+import { BrowserRouter, Route,  } from "react-router-dom";
+import HomeScreen from "./screens/HomeScreen"
+import Coleccion from "./screens/Coleccion"
+import theme from './temaConfig'
+import {ThemeProvider} from '@material-ui/core/styles'
+import Contenedor from './components/Contenedor';
+
+
 
 class App extends React.Component {
   // constructor(){
@@ -78,44 +82,31 @@ class App extends React.Component {
   render(){
     return (
     <Provider   store={store}>
+    <ThemeProvider theme={theme}>
+    <BrowserRouter>
     <div className="grid-container">
-      <header>
-        <a className="logo-principal" href="/">TooHigh shop </a>
-      </header>
+    <header>  
+      <Contenedor/>
+    </header>
 
       <main>
-        <div className="content">
-          <div className="main">
-            <Filtrador
-            //  count={this.state.productos.length}
-            // talla={this.state.talla}
-            // clasificacion={this.state.clasificacion}
-            // filtradorProductos={this.filtradorProductos}
-            // clasificacionProductos={this.clasificacionProductos}
-            ></Filtrador>
-
-            <Productos 
-              // productos={this.state.productos}
-              // agregarACarrito={this.agregarACarrito}
-            ></Productos>
-
-            </div>
-          <div className="sidebar">
-          <Cart 
-          // cartItems={this.state.cartItems} 
-          // removerDeCarrito={this.removerDeCarrito}
-          // createOrder={this.createOrder}
-          />
-          </div>
-        </div>
+        <Route exact path="/" component={HomeScreen}/>
+        <Route exact path="/coleccion" component={Coleccion}/>
       </main>
       <footer>
         todos los derechos reservados
       </footer>
     </div>
+    </BrowserRouter>
+    </ThemeProvider>
     </Provider> 
   );
   }
 }
 
 export default App;
+
+//Navbar-original
+// <header>
+// <a className="logo-principal" href="/">TOO HIGH</a>
+// </header>

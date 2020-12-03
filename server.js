@@ -71,6 +71,7 @@ app.post("/apiOrders", async(req, res)=>{
         }
         const order = await Order(req.body).save();
         res.send(order);
+        console.log(req.body)
 })
 
 

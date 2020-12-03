@@ -38,13 +38,13 @@ class Productos extends Component {
                                 <a href={"#" + producto._id} onClick={()=>this.openModal(producto)}>
                                     <img src={producto.imagen} alt={producto.titulo}></img>
                                    
-                                    
-                                </a>
                                 <div className="producto-precio">
-                                <button
-                                onClick={()=> this.props.agregarACarrito(producto)} 
-                                className="button primary"><i class="fas fa-shopping-basket"></i>     Agregar a carrito</button>
+                                    <button
+                                    onClick={()=> this.props.agregarACarrito(producto)} 
+                                    className="button primary"><i class="fas fa-shopping-basket"></i>     Agregar a carrito</button>
                                 </div>
+                                </a>
+                                
                                 <div className="precio-titulo">
                                 {formatCurrency(producto.precio)} 
                                 <p>{producto.titulo}</p>

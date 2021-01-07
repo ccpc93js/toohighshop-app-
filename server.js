@@ -6,7 +6,10 @@ const shortid = require('shortid')
 const app = express();
 app.use(bodyParser.json());
 
-mongoose.connect("mongodb://localhost/toohighshop-db",{
+mongoose.connect(
+    // "mongodb://localhost/toohighshop-db"
+    "mongodb+srv://CCPCjs:ccpcjs93@cluster0.nhtv9.mongodb.net/toohighshop-db?retryWrites=true&w=majority"
+    ,{
     useNewUrlParser:true,
     useCreateIndex: true,
     useUnifiedTopology:true

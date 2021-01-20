@@ -3,11 +3,13 @@ import {Drawer, makeStyles, IconButton,useTheme} from '@material-ui/core';
 // import Button from '@material-ui/core/Button';
 // import Divider from '@material-ui/core/Divider';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Listas from './Listas'
+
+import Cart from "../components/Cart";
+
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 
-
+const drawerWidth = 320;
 const useStyles = makeStyles((theme)=>({
   list: {
     width: 250,
@@ -19,11 +21,11 @@ const useStyles = makeStyles((theme)=>({
     display: 'none',
   },
   drawer: {
-    width: 240,
+    width: drawerWidth,
     flexShrink: 0,
   },
   drawerPaper: {
-    width: 240,
+    width: drawerWidth,
   },
   drawerHeader: {
     display: 'flex',
@@ -40,14 +42,14 @@ const useStyles = makeStyles((theme)=>({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
-    marginLeft: -240,
+    marginRight: -drawerWidth,
   },
   contentShift: {
     transition: theme.transitions.create('margin', {
       easing: theme.transitions.easing.easeOut,
       duration: theme.transitions.duration.enteringScreen,
     }),
-    marginLeft: 0,
+    marginRight: 0,
   },
 }));
 
@@ -60,7 +62,7 @@ const useStyles = makeStyles((theme)=>({
 
 
 
- const DrawerCajon = (props) => {
+ const DrawerRight = (props) => {
   const classes = useStyles();
   const theme = useTheme();
  
@@ -68,26 +70,28 @@ const useStyles = makeStyles((theme)=>({
   return (
     <div className={classes.root}>
       <CssBaseline />
+      
       <Drawer
         className={classes.drawer}
         variant="temporary"
-        anchor="left"
-        open={props.open}
-        onClose={props.onClose ? props.onClose: null}
+        anchor="right"
+        open={props.openRight}
         classes={{
           paper: classes.drawerPaper,
         }}
+        onClose={props.onCloseRight ? props.onCloseRight: null}
       >
       <div className={classes.drawerHeader}>
-          <IconButton onClick={props.handleDrawerClose}>
-            {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+          <IconButton onClick={props.handleDrawerCloseRight}>
+            {theme.direction === 'rtl' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
         </div>
        
        
-        <Listas>
-         
-        </Listas>
+        <Cart
+        handleDrawerCloseRight={props.handleDrawerCloseRight} 
+
+        />
        
    
       </Drawer>
@@ -96,4 +100,4 @@ const useStyles = makeStyles((theme)=>({
   );
 }
 
-export default DrawerCajon
+export default DrawerRight

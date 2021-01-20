@@ -35,15 +35,15 @@ class Productos extends Component {
                     {this.props.productos.map(producto =>(
                         <li key={producto._id}>
                             <div className="producto">
-                                <a href={"#" + producto._id} onClick={()=>this.openModal(producto)}>
+                                <a href={`/producto/${producto._id}`} >
                                     <img src={producto.imagen} alt={producto.titulo}></img>
-                                   
+                                </a>
                                 <div className="producto-precio">
                                     <button
-                                    onClick={()=> this.props.agregarACarrito(producto)} 
-                                    className="button primary"><i class="fas fa-shopping-basket"></i>     Agregar a carrito</button>
+                                    onClick={()=>this.openModal(producto)} 
+                                    className="button primary">COMPRA RAPIDA</button>
                                 </div>
-                                </a>
+                                
                                 
                                 <div className="precio-titulo">
                                 {formatCurrency(producto.precio)} 
@@ -65,7 +65,9 @@ class Productos extends Component {
                             <Zoom>
                                 <buttom className="close-modal" onClick={this.closeModal}><i class="far fa-times-circle"></i></buttom>
                                 <div className="product-detail">
+                                <a href={`/producto/${producto._id}`}>
                                     <img src={producto.imagen} alt={producto.titulo}></img>
+                                </a>   
                                     <div className="product-detail-description">
                                         <p>
                                             <strong>{producto.titulo}</strong>

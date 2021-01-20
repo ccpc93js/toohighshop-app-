@@ -2,7 +2,6 @@
 import React, { Component } from "react";
 import Filtrador from "../components/Filtrador";
 import Productos from "../components/Productos";
-import Cart from "../components/Cart";
 
 export default class Coleccion extends Component {
   render() {
@@ -13,9 +12,7 @@ export default class Coleccion extends Component {
             <Filtrador></Filtrador>
             <Productos></Productos>
           </div>
-          <div className="sidebar">
-            <Cart />
-          </div>
+          
         </div>
       </div>
     );

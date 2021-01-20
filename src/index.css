@@ -75,8 +75,7 @@ textarea{
   "footer";
   grid-template-rows: 5rem 1fr 5rem;
   grid-template-columns: 1fr;
-  height: 100%;
-  /* height: 100vh; */
+  height: 100vh; 
   /* height: 100%; no funciona el %*/
   /* main-height: calc(100vh - 100px - 300px) por si algo sale mal con la medida vh*/
 }
@@ -148,15 +147,15 @@ footer{
   list-style-type: none;
 }
 .productos li{
-  flex: 0 1 29rem;
-  height: 47rem;
+  flex: 0 1 40rem;
+  width: 30rem;
   padding: 2rem;
 }
 .producto{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
+  width: 100%;
   
 }
 
@@ -166,8 +165,8 @@ footer{
 }
 
 .producto img{
-  max-width: 37rem;
-  max-height: 37rem;
+  max-width: 100%;
+  max-height: 100%;
 
 }
 .producto-precio{
@@ -413,23 +412,43 @@ i{
 /* Home */
 
 .coleccion-img{
-  width: 10rem;
+  /* width: 10rem; */
   align-content: center;
   align-items: center;
 
 }
 
-.coleccion-img div  {
-  width:  8rem;
-  padding: 5rem 5rem 5rem 15rem;
+.coleccion-img >.row  {
+  /* width:  8rem; */
+  /* padding: 5rem 5rem 5rem 15rem; */
+  /* align-items: center; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:  space-between;
   align-items: center;
+ 
 
 
 }
 
-.coleccion-img a {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+.coleccion-img >.row> div{
+  /* margin: 30rem; */
+  /* width: 100%; */
+
+}
+
+.coleccion-img a{
+  /* align-content: space-between; */
+  /* width: 100%; */
+
+}
+
+.coleccion-img  img {
+  /* padding-top: 5rem;
+  padding-bottom: 5rem; */
+  /* width: 60rem; */
+  /* max-width: 80rem; */
+  width: 100%;
 }
 
 /*Navbar*/
@@ -446,4 +465,18 @@ i{
 
 .listas{
   font-size: 3rem;
+}
+
+/* header */
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:  space-between;
+  align-items: center;
+}
+
+
+.img-search{
+  width: 20rem;
 }

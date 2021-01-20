@@ -1,6 +1,8 @@
 import React from 'react';
 import {AppBar,makeStyles, Toolbar,Typography,IconButton, } from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import SearchIcon from '@material-ui/icons/Search';
 import data from "../data.json"; 
 
 import clsx from 'clsx';
@@ -8,6 +10,7 @@ import clsx from 'clsx';
 
 import PropTypes from 'prop-types';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
+import ModalSearch from './ModalSearch';
 
 
 
@@ -94,6 +97,15 @@ const useStyles = makeStyles(theme =>({
     }),
     marginLeft: -240,
   },
+  cartIcon: {
+    flexGrow: 1,
+    padding: theme.spacing(3),
+    transition: theme.transitions.create('margin', {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+    marginRight: -240,
+  },
   contentShift: {
     transition: theme.transitions.create('margin', {
       easing: theme.transitions.easing.easeOut,
@@ -127,11 +139,34 @@ const ElevateAppBar= (props) => {
                 >
                 <MenuIcon  />
               </IconButton>
-                <Typography variant="h6" className={classes.title}>
+
+              <Typography variant="h6" className={classes.title}>
                      <a className="logo-principal" href="/">
                         <img src={data.logo[0].imagen} alt="" />
                      </a>
                 </Typography>
+
+              <IconButton
+               aria-label="search" 
+               color="inherit"
+              //  onClick={props.ModalSearchOpen}
+               >
+                <SearchIcon>
+                  <ModalSearch/>
+                </SearchIcon>
+              </IconButton>  
+
+              <IconButton 
+                aria-label="menu " 
+                color="inherit"
+                className={clsx(classes.menuButton, props.openRight && classes.hide)}
+                onClick={props.handleDrawerOpenRight}
+                edge="end"
+                
+                >
+                <ShoppingCartIcon/>
+              </IconButton>
+                
           </Toolbar>
         </AppBar>
       </ElevationScroll>

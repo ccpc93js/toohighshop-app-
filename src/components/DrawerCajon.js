@@ -70,9 +70,10 @@ const useStyles = makeStyles((theme)=>({
       <CssBaseline />
       <Drawer
         className={classes.drawer}
-        variant="persistent"
+        variant="temporary"
         anchor="left"
         open={props.open}
+        onClose={props.onClose ? props.onClose: null}
         classes={{
           paper: classes.drawerPaper,
         }}

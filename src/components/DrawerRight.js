@@ -79,7 +79,7 @@ const useStyles = makeStyles((theme)=>({
         classes={{
           paper: classes.drawerPaper,
         }}
-        onClose={props.onClose ? props.onClose: null}
+        onClose={props.onCloseRight ? props.onCloseRight: null}
       >
       <div className={classes.drawerHeader}>
           <IconButton onClick={props.handleDrawerCloseRight}>

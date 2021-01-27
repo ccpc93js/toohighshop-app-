@@ -31,26 +31,26 @@ class Productos extends Component {
                     !this.props.productos ? (
                          <div>Loading...</div>
                          ):(
-                    <ul className="productos">
+                    <ul className="productos ">
                     {this.props.productos.map(producto =>(
                         <li key={producto._id}>
-                            <div className="producto">
+                            <div className="producto cards">
                                 <a href={`/producto/${producto._id}`} >
                                     <img src={producto.imagen} alt={producto.titulo}></img>
                                 </a>
-                                <div className="producto-precio">
+                                <div className=" cards-body ">
                                     <button
                                     onClick={()=>this.openModal(producto)} 
-                                    className="button primary">COMPRA RAPIDA</button>
-                                </div>
-                                
-                                
-                                <div className="precio-titulo">
+                                    className="mainBoton block">COMPRA RAPIDA</button>
+                                    <div className="precio-titulo">
                                 {formatCurrency(producto.precio)} 
                                 <p>{producto.titulo}</p>
                                 </div>
+                                 </div>
+                                </div>
                                 
-                            </div>
+                                
+                                
                         </li>
                     ))}
                 </ul>

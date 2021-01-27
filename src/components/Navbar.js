@@ -146,15 +146,9 @@ const ElevateAppBar= (props) => {
                      </a>
                 </Typography>
 
-              <IconButton
-               aria-label="search" 
-               color="inherit"
-              //  onClick={props.ModalSearchOpen}
-               >
-                <SearchIcon>
-                  <ModalSearch/>
-                </SearchIcon>
-              </IconButton>  
+              
+              
+              <ModalSearch/>
 
               <IconButton 
                 aria-label="menu " 
@@ -181,3 +175,13 @@ const ElevateAppBar= (props) => {
 
 
 export default ElevateAppBar
+
+// <IconButton
+//                aria-label="search" 
+//                color="inherit"
+//               //  onClick={props.ModalSearchOpen}
+//                >
+//                 <SearchIcon>
+                
+//                 </SearchIcon>
+//               </IconButton> 

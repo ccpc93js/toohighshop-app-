@@ -162,11 +162,15 @@ footer{
 .precio-titulo{
   padding: 0rem;
   justify-content: 0rem;
+  font-family: 'Roboto', sans-serif;
+  /* margin-left: 1.5rem; */
+  font-size: 1.2rem;
 }
 
 .producto img{
   max-width: 100%;
   max-height: 100%;
+
 
 }
 .producto-precio{
@@ -181,9 +185,8 @@ footer{
 .producto-precio button{
   text-align: center;
   flex: 1;
-  margin-right: 3.7rem;
   width: 100%;
-  margin-left: 0;
+  
 
   
   
@@ -202,6 +205,7 @@ footer{
   cursor: pointer;
   margin: 1rem;
   border-radius: 0.3rem;
+  width: 100%;
 
 
 }
@@ -217,6 +221,7 @@ footer{
   font-size: rem;
   background-color: black;
   color: white;
+
 }
 
 .button.primary:hover{
@@ -411,45 +416,6 @@ i{
 
 /* Home */
 
-.coleccion-img{
-  /* width: 10rem; */
-  align-content: center;
-  align-items: center;
-
-}
-
-.coleccion-img >.row  {
-  /* width:  8rem; */
-  /* padding: 5rem 5rem 5rem 15rem; */
-  /* align-items: center; */
-  display: flex;
-  flex-wrap: wrap;
-  justify-content:  space-between;
-  align-items: center;
- 
-
-
-}
-
-.coleccion-img >.row> div{
-  /* margin: 30rem; */
-  /* width: 100%; */
-
-}
-
-.coleccion-img a{
-  /* align-content: space-between; */
-  /* width: 100%; */
-
-}
-
-.coleccion-img  img {
-  /* padding-top: 5rem;
-  padding-bottom: 5rem; */
-  /* width: 60rem; */
-  /* max-width: 80rem; */
-  width: 100%;
-}
 
 /*Navbar*/
 .Navbar{
@@ -462,7 +428,9 @@ i{
   font-size: 2.5rem;
   color: white;
 }
-
+.btn-search{
+  color: white;
+}
 .listas{
   font-size: 3rem;
 }
@@ -471,12 +439,135 @@ i{
 
 .row{
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
+  flex-flow: wrap;
   justify-content:  space-between;
   align-items: center;
+  margin: 2rem;
+}
+
+.row.top{
+  align-items: flex-start;
 }
 
 
 .img-search{
-  width: 20rem;
+  width: 7rem;
+}
+
+.col-1{
+  flex: 1 1 25rem;
+}
+
+.col-2{
+  flex: 2 1 50rem;
+
+}
+
+/* images */
+
+img{
+  border-radius: 0.1rem;
+
+}
+
+img.medium{
+  max-width: 40rem;
+  width: 100%;
+}
+
+/* common */
+
+button {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 0.1rem #a4a4a4 solid;
+  font-size: 1.6rem;
+  font-family: Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+button.primary {
+  background-color: #f8f8f8;
+  cursor: pointer;
+}
+input:hover,
+select:hover,
+textarea:hover,
+button.primary:hover {
+  border: 0.1rem #404040 solid;
+}
+button.warning {
+  background-color: #f0c040;
+}
+button.block {
+  width: 100%;
+}
+
+button.small {
+  font-size: 1.2rem;
+}
+
+.mainBoton{
+  font-family: 'robot';
+  font-size: rem;
+  /* padding: 1rem; */
+  border: none;
+  background-color: transparent;
+  color: black ;
+  cursor: pointer;
+   margin-bottom: 1rem; 
+  width: 100%;
+  border-radius: 0%;
+
+}
+
+.mainBoton:hover{
+  border: none;
+  background-color: rgba(17, 17, 17, 0.5);
+  color: white;
+  transition: 1s;
+}
+
+
+/* card */
+
+.cards{
+  /* border: 0.1rem #c0c0c0 solid; */
+  background-color:  #f8f8f8;
+  /* border-radius: 0.5rem; */
+  margin: 0.5rem;
+}
+
+.cards-body{
+  padding: 1rem;
+
+}
+
+.cards-body >*{
+  /* margin-bottom: 0.5rem; */
+}
+
+.price{
+  font-size: 2rem;
+}
+
+/* Rating */
+
+.rating span{
+  color: rgb(228, 228, 8);
+  margin: 0.1rem;
+}
+.rating span:last-child{
+  color: #404040
+}
+
+/* alert */
+
+.success{
+  color: #20a020;
+}
+
+.error{
+  color: #a02020;
 }

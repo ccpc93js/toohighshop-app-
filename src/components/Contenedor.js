@@ -31,24 +31,25 @@ const Contenedor = () => {
       setOpenRight(!openRight)
     }
 
-    const ModalSearchOpen = () => {
-      setModalSearchOpen(true);
-    };
-    const ModalSearchClose = () => {
-      setModalSearchOpen(false);
-    };
-    const accionModalSearch =()=>{
-      setModalSearchOpen(!openModal)
-    }
+    // const ModalSearchOpen = () => {
+    //   setModalSearchOpen(true);
+    // };
+    // const ModalSearchClose = () => {
+    //   setModalSearchOpen(false);
+    // };
+    // const accionModalSearch =()=>{
+    //   setModalSearchOpen(!openModal)
+    // }
     return (
         <div>
-        <Navbar className="Navbar" handleDrawerOpen={handleDrawerOpen} handleDrawerOpenRight={handleDrawerOpenRight} openRight={openRight} open={open}ModalSearchOpen={ModalSearchOpen} openModal={openModal}></Navbar>
+        <Navbar className="Navbar" handleDrawerOpen={handleDrawerOpen} handleDrawerOpenRight={handleDrawerOpenRight} openRight={openRight} open={open}></Navbar>
         <DrawerCajon handleDrawerClose={handleDrawerClose} open={open}  onClose={accionOpen}></DrawerCajon>
 
         <DrawerRight  handleDrawerCloseRight={handleDrawerCloseRight} openRight={openRight} onCloseRight={accionOpenRight}/>
-        <ModalSearch ModalSearchOpen={ModalSearchOpen} ModalSearchClose={ModalSearchClose} onClosetModalSearch={accionModalSearch} />
         </div>
     )
 }
 
 export default Contenedor
+
+// <ModalSearch ModalSearchOpen={ModalSearchOpen} ModalSearchClose={ModalSearchClose} onClosetModalSearch={accionModalSearch} />

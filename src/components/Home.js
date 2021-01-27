@@ -22,42 +22,43 @@ class  Home extends Component {
             <div className="coleccion-img " >
                 {
                     this.state.colecciones.map(coleccion =>{
-                    return <div className="container">
+                    return (
                     <div className="row"> 
-                                    <div className="col-4 card">
+                                    <div className="cards">
                                     <a href="/coleccion">
-                                    <img src={coleccion.imagen} alt="imagen de la coleccion" className=""></img>
+                                    <img src={coleccion.imagen} alt="imagen de la coleccion" className="medium"></img>
                                     </a>
                                     </div>
-                                    <div className="col-4 card">
+                                    <div className="cards">
                                     <a href="/coleccion">
-                                    <img src={coleccion.imagen} alt="imagen de la coleccion" className=""></img>
+                                    <img src={coleccion.imagen} alt="imagen de la coleccion" className="medium"></img>
                                     </a>
                                     </div>
-                                    <div className="col-4 card">
+                                    <div className="cards">
                                     <a href="/coleccion">
-                                    <img src={coleccion.imagen} alt="imagen de la coleccion" className=""></img>
+                                    <img src={coleccion.imagen} alt="imagen de la coleccion" className="medium"></img>
                                     </a>
                                     </div>
+                            
+                                    <div className="cards">
+                                    <a href="/coleccion">
+                                    <img src={coleccion.imagen} alt="imagen de la coleccion" className="medium"></img>
+                                    </a>
+                                    </div>
+                                    <div className="cards">
+                                    <a href="/coleccion">
+                                    <img src={coleccion.imagen} alt="imagen de la coleccion" className="medium"></img>
+                                    </a>
+                                    </div>
+                                    <div className="cards">
+                                    <a href="/coleccion">
+                                    <img src={coleccion.imagen} alt="imagen de la coleccion" className="medium"></img>
+                                    </a>
+                                    </div>
+                            
                             </div>
-                            <div className="row"> 
-                                    <div className="col-4 card">
-                                    <a href="/coleccion">
-                                    <img src={coleccion.imagen} alt="imagen de la coleccion" className=""></img>
-                                    </a>
-                                    </div>
-                                    <div className="col-4 card">
-                                    <a href="/coleccion">
-                                    <img src={coleccion.imagen} alt="imagen de la coleccion" className=""></img>
-                                    </a>
-                                    </div>
-                                    <div className="col-4 card">
-                                    <a href="/coleccion">
-                                    <img src={coleccion.imagen} alt="imagen de la coleccion" className=""></img>
-                                    </a>
-                                    </div>
-                            </div>
-                            </div>
+                            )
+
                 })}
                 
             </div>

@@ -14,7 +14,7 @@ function SearchBar() {
 
       {searchColeccion.filter((val)=>{
         if (searchTerm === ""){
-          return val
+          return ""
         }else if (val.titulo.toLowerCase().includes(searchTerm.toLocaleLowerCase())){
           return val
         }

@@ -2,7 +2,6 @@ import React from 'react';
 import {AppBar,makeStyles, Toolbar,Typography,IconButton, } from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import SearchIcon from '@material-ui/icons/Search';
 import data from "../data.json"; 
 
 import clsx from 'clsx';
@@ -11,6 +10,7 @@ import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import ModalSearch from './ModalSearch';
+import SimpleModal from './SimpleModal';
 
 
 
@@ -145,11 +145,10 @@ const ElevateAppBar= (props) => {
                         <img src={data.logo[0].imagen} alt="" />
                      </a>
                 </Typography>
-
+                
               
-              
+           
               <ModalSearch/>
-
               <IconButton 
                 aria-label="menu " 
                 color="inherit"

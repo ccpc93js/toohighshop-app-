@@ -6,7 +6,7 @@ function SearchBar() {
   const[searchTerm, setSearchTerm] = useState("");
   const searchColeccion = data.productos
   return (
-    <div className="App">
+    <div className="searchBar">
       <input 
       type="text"
        placeholder="Search..." 
@@ -21,8 +21,10 @@ function SearchBar() {
     }).map((val, key)=>{
          return (
           <div className="user" key={key}>
-          <img src={val.imagen} alt="" className="img-search"/>  
-          <p>{val.titulo}</p>
+         <a href={`/producto/${val._id}`}>
+            <img src={val.imagen} alt="" className="img-search"/>  
+            <p>{val.titulo}</p>
+         </a>
 
           </div>
         );

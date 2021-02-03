@@ -84,6 +84,7 @@ export default function ModalSearch() {
       <Modal
         open={openModal}
         onClose={ModalSearchClose}
+        className="Modal"
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
       >

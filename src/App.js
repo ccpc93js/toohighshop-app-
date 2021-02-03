@@ -10,6 +10,7 @@ import theme from './temaConfig'
 import {ThemeProvider} from '@material-ui/core/styles'
 import Contenedor from './components/Contenedor';
 import ProductScreen from './screens/ProductScreen';
+import CartScreen from './screens/CartScreen';
 
 
 
@@ -95,6 +96,8 @@ class App extends React.Component {
         <Route exact path="/" component={HomeScreen}/>
         <Route exact path="/coleccion" component={Coleccion}/>
         <Route exact path="/producto/:id" component={ProductScreen}/>
+        <Route path="/cart/:id?" component={CartScreen}></Route>
+
       </main>
       <footer>
         todos los derechos reservados

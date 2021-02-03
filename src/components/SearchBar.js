@@ -9,8 +9,9 @@ function SearchBar() {
     <div className="searchBar">
       <input 
       type="text"
-       placeholder="Search..." 
+       placeholder="Buscar producto..." 
        onChange={(e) =>{setSearchTerm(e.target.value)}}/>
+      <div className="containerElement">
 
       {searchColeccion.filter((val)=>{
         if (searchTerm === ""){
@@ -21,14 +22,18 @@ function SearchBar() {
     }).map((val, key)=>{
          return (
           <div className="user" key={key}>
-         <a href={`/producto/${val._id}`}>
+         <a href={`/producto/${val._id}`} className="elementSearch">
             <img src={val.imagen} alt="" className="img-search"/>  
-            <p>{val.titulo}</p>
+            <div>
+              <p>{val.titulo}</p>
+              <p>$ {val.precio}</p>
+            </div>
          </a>
 
           </div>
         );
          })}
+      </div>
     </div>
   );
 }

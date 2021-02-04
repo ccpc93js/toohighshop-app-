@@ -30,8 +30,12 @@
 
 .elementSearch{
     display: flex;
-    margin-left: 1.5rem;
+    /* margin-left: 1.5rem; */
 }
+/* .elementSearch:hover{
+    background-color: rgb(16, 16, 17);
+    transition: 0.6ms;
+} */
 
 .elementSearch div{
     margin: auto;
@@ -44,6 +48,8 @@
 .img-search{
     margin-top: 1rem;
     margin-bottom: 1rem;
+    margin-left: 1.5rem;
+
 }
 
 .Modal{

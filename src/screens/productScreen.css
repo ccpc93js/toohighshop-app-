@@ -1,0 +1,77 @@
+.general-product{
+    margin-top: 1rem;
+  font-family: 'GothamBold', Arial, Helvetica, sans-serif;
+  text-align: center;
+    
+}
+.general-product h1{
+    font-size: 4rem;
+    color: grey;
+}
+.general-product li p{
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.buton-seguir-comprando{
+    margin-left: 3rem;
+}
+.CP{
+    margin-top: 1rem;
+}
+.volver{
+    font-size: 1.3rem;
+    margin-left: 1rem;
+}
+
+.fila{
+    display: flex;
+    justify-content: center;
+}
+
+.contenido-op{
+    justify-content: center;
+    width: 40rem;
+    
+}
+
+.descripcion-1{
+    margin-top: 20%;
+    margin-bottom: 1rem;
+}
+
+.compra-1{
+    margin-top: 1rem;
+}
+
+.precio,.enstock{
+    margin-bottom: 3rem;
+
+
+}
+.success,.error{
+    font-size: 1.4rem;
+}
+
+
+
+.button-product{
+    font-family: 'robot';
+    font-size: rem;
+    /* padding: 1rem; */
+    border: none;
+    background-color: black;
+    color: white ;
+    cursor: pointer;
+     margin-bottom: 1rem; 
+    width: 100%;
+    border-radius: 0%;
+  
+  }
+  
+  .button-product:hover{
+    border: none;
+    background-color: rgba(22, 22, 22, 0.7);
+    color: white;
+    transition: 1s;
+  }

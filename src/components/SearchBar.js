@@ -25,8 +25,8 @@ function SearchBar() {
          <a href={`/producto/${val._id}`} className="elementSearch">
             <img src={val.imagen} alt="" className="img-search"/>  
             <div>
-              <p>{val.titulo}</p>
-              <p>$ {val.precio}</p>
+              <p className="elementSearch-p">{val.titulo}</p>
+              <p className="elementSearch-p">$ {val.precio}</p>
             </div>
          </a>
 

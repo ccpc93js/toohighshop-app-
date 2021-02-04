@@ -6,6 +6,9 @@ import Zoom from "react-reveal/Zoom"
 import { connect } from 'react-redux';
 import { removerDeCarrito } from '../action/cartActions';
 import {createOrder, clearOrder} from "../action/orderActions"
+import { IconButton } from '@material-ui/core';
+
+import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
  class Cart extends Component {
     constructor(props){
         super(props);
@@ -104,9 +107,11 @@ import {createOrder, clearOrder} from "../action/orderActions"
                                     <div>{item.titulo}</div>
                                     <div className="right">
                                         {formatCurrency(item.precio)} x {item.count}{""}
-                                        <button 
-                                         className="button"
-                                         onClick={()=>this.props.removerDeCarrito(item)}>Remover</button>
+                                        <IconButton 
+                                         className="button-remove"
+                                         onClick={()=>this.props.removerDeCarrito(item)}>
+                                            <DeleteForeverIcon className="button-remove"/>
+                                         </IconButton>
                                     </div>
                                 </div>
                             </li>

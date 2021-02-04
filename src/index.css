@@ -5,6 +5,8 @@
 @import uRL("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
 @font-face{font-family: paladins; src:url(paladins.ttf);}
 @font-face{font-family: paladins3D; src:url(paladins3d.ttf);}
+@font-face{font-family: GothamBold; src:url(GothamBold.ttf);}
+@font-face{font-family: GothamBold; src:url(Gotham XNarrow Book Italic.otf);}
 
 /* tipos de tipografia a utilicar
 helvetica light italic
@@ -34,7 +36,7 @@ select,
 button,
 textarea{
   /* font-family: Montserrat,Arial, Helvetica, sans-serif; */
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Gotham XNarrow Book Italic',;
 
   font-size: 1.6rem;
 }
@@ -162,7 +164,7 @@ footer{
 .precio-titulo{
   padding: 0rem;
   justify-content: 0rem;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'GothamBold';
   /* margin-left: 1.5rem; */
   font-size: 1.2rem;
 }
@@ -196,7 +198,7 @@ footer{
   font-size: 1.3rem;
 }
 .button{
-  font-family: 'Staatliches', cursive;
+  font-family: 'GothamBold';
   font-size: rem;
   padding: 1rem;
   border: 0.1rem #c0c0c0 solid;
@@ -217,8 +219,7 @@ footer{
 
 }
 .button.primary{
-  font-family: 'Staatliches', cursive;
-  font-size: rem;
+  font-family: 'GothamBold';
   background-color: black;
   color: white;
 
@@ -234,7 +235,7 @@ footer{
 /* Filtrador */
 
 .filtrador{
-  font-family: 'Roboto', sans-serif;
+  /* font-family: 'Roboto', sans-serif; */
   font-size: 1.5rem;
   display:  flex;
   justify-content: space-between;
@@ -274,6 +275,9 @@ footer{
 }
 .cart-items li div:last-child{
   flex: 1;
+}
+.button-remove{
+  color: black;
 }
 .right {
   text-align: right;
@@ -315,6 +319,10 @@ input{
   padding: 0.3rem;
   border: 0.1rem rgb(146, 137, 137) solid;
   border-radius: 0.5rem;
+}
+
+ul{
+  list-style-type: none  ;
 }
 
 .btn-person{
@@ -483,7 +491,7 @@ button {
   border-radius: 0.5rem;
   border: 0.1rem #a4a4a4 solid;
   font-size: 1.6rem;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'GothamBold';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -509,7 +517,7 @@ button.small {
 }
 
 .mainBoton{
-  font-family: 'robot';
+  font-family: 'GothamBold';
   font-size: rem;
   /* padding: 1rem; */
   border: none;
